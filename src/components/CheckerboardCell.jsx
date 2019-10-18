@@ -10,15 +10,47 @@ export default class CheckerboardCell extends React.Component {
     };
 
     render() {
+        let rowStyle = {};
+        let colStyle = {};
+        if (this.props.row === 0) {
+            colStyle = {
+                ...colStyle,
+                height: '50%',
+                top: '50%'
+            }
+        }
+
+        if (this.props.row === 14) {
+            colStyle = {
+                ...colStyle,
+                height: '50%',
+            }
+        }
+
+        if (this.props.col === 0){
+            rowStyle={
+                ...rowStyle,
+                width:'50%',
+                left:'50%'
+            }
+        }
+
+        if (this.props.col === 14){
+            rowStyle={
+                ...rowStyle,
+                width:'50%',
+            }
+        }
+
         return (
             <div className="CheckerboardCell-cell" onClick={this.handleClick}>
-                <div className="CheckerboardCell-cell-row" />
-                <div className="CheckerboardCell-cell-col" />
+                <div className="CheckerboardCell-cell-row" style={rowStyle} />
+                <div className="CheckerboardCell-cell-col" style={colStyle} />
                 {
-                    this.props.value === 1 && <div className="pieces" style={{background:'#333'}} />
+                    this.props.value === 1 && <div className="pieces" style={{background: '#333'}} />
                 }
                 {
-                    this.props.value === 2 && <div className="pieces" style={{background:'white'}} />
+                    this.props.value === 2 && <div className="pieces" style={{background: 'white'}} />
                 }
             </div>
         );
