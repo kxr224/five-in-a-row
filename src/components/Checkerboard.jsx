@@ -16,12 +16,14 @@ export default class Checkerboard extends React.Component {
 
         return (
             <div className='Checkerboard'>
-                {
-                    checkerboard.map((row, index) => {
-                        return <CheckerboardRow key={index} cols={row} row={index}
-                                                onClickCell={this.handleClick.bind(this)} />
-                    })
-                }
+                <div style={{background:'white'}}>
+                    {
+                        checkerboard.map((row, index) => {
+                            return <CheckerboardRow key={index} cols={row} row={index}
+                                                    onClickCell={this.handleClick.bind(this)} />
+                        })
+                    }
+                </div>
             </div>
         );
     }

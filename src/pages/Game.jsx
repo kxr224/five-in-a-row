@@ -4,7 +4,9 @@ import Checkerboard from "../components/Checkerboard";
 import {isSuccess} from "../utils/fiveSuccess";
 import { message } from 'antd';
 import { Modal } from 'antd';
+import { Layout } from 'antd';
 
+const { Header, Footer, Sider, Content } = Layout;
 const { confirm } = Modal;
 /**
  * 游戏的类

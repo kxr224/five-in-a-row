@@ -15,11 +15,14 @@ code {
 }
 
 .Checkerboard {
-    padding: 50px;
+    background-color: rgb(245, 245, 245);
+    padding: 0 24px;
 }
 
 .CheckerboardRow-row {
     display: flex;
+    justify-content:center;
+
 }
 
 /*每个单元格的样式*/
@@ -52,4 +55,13 @@ code {
     position: absolute;
     top: 15%;
     left: 15%;
+}
+
+@media screen and (max-width: 750px) {
+    /*每个单元格的样式*/
+    .CheckerboardCell-cell {
+        height: calc((100vw - 48px)/15);
+        width: calc((100vw - 48px)/15);
+        position: relative;
+    }
 }
